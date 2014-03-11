@@ -1,14 +1,17 @@
 angular.module('out.controllers', [])
 
-.controller('DailyViewCtrl', function($scope, FiveDayForecastService) {;
+.controller('FiveDayForecastCtrl', function($scope, FiveDayForecastService) {;
 
-	// Weather Service is assured resolved by this call. (Note route resolve)
+	// After forecast resolves its promise, initialize the scope variable.
 	FiveDayForecastService.getForecast().then(function(data){
     $scope.forecast = data.data.list;
   })
 })
 
 /*
+
+// TODO: Use Loading controller during data fetch.
+
 .controller('LoadingCtrl', ['$scope', '$ionicLoading', function($scope, $ionicLoading) {
 
   // Trigger the loading indicator

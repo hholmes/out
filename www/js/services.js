@@ -1,7 +1,7 @@
 angular.module('out.services', [])
 
 /**
- * ...by any other name,
+ * Queries the Open Weather api for the 5 day forecast.
  */
 .factory('FiveDayForecastService', function($q, $http) {
 
@@ -20,17 +20,4 @@ angular.module('out.services', [])
     return {
       getForecast: getForecast
     };
-
-  // return {
-  //   promise: promise,
-  //   setForecast: function (data) {
-  //     forecast = data;
-  //   },
-  //   all: function() {
-  //     return forecast.list;
-  //   },
-  //   dayAtIndex: function(i) {
-  //     return forecast.list[i];
-  //   }
-  // }
 });

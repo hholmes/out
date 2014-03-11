@@ -3,14 +3,15 @@
 
 		<div class="card" ng-repeat="dayData in forecast">
 			<!-- 
-			  TODO: Add class to adjust background depending on weather conditions, eg. ".rainy" 
+			  TODO: Accomodate weather conditions, 
+			  	eg. ".rainy" if dayData.weather[0].main contains the string "Rain"
 			-->
-			<div class="item item-text-wrap temperature">
-				{{dayData.temp.day}}
-				&deg;
+			<div class="item item-text-wrap temperature {{outWeatherType()}}">
+				{{dayData.temp.day | number:0}}&deg;
 			</div>
 
 			<div class="item item-divider today">
+				<!-- dt = Unix time of temperature forecast, multiplied by 1000 for milsec -->
 				{{(dayData.dt*1000) | date:'EEEE'}}
 			</div>
 

@@ -3,10 +3,77 @@
 	{
 		"selected_items":
 		[
+			[
+				"get",
+				"getForecast"
+			],
+			[
+				"d",
+				"DailyWeatherServiceData"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"template",
+				"templateUrl"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "www/index.html",
+			"settings":
+			{
+				"buffer_size": 832,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/fiveDayForecast.html",
+			"settings":
+			{
+				"buffer_size": 626,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/config.xml",
+			"settings":
+			{
+				"buffer_size": 649,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/app.js",
+			"settings":
+			{
+				"buffer_size": 509,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "angular.module('out.controllers', [])\n\n.controller('FiveDayForecastCtrl', function($scope, FiveDayForecastService) {;\n\n	// After forecast resolves its promise, initialize the scope variable.\n	FiveDayForecastService.getForecast().then(function(data){\n    $scope.forecast = data.data.list;\n  })\n})\n\n.directive('outWeatherType',function)\n\n/*\n\n// TODO: Use Loading controller during data fetch.\n\n.controller('LoadingCtrl', ['$scope', '$ionicLoading', function($scope, $ionicLoading) {\n\n  // Trigger the loading indicator\n  $scope.show = function() {\n\n    // Show the loading overlay and text\n    $scope.loading = $ionicLoading.show({\n\n      // The text to display in the loading indicator\n      content: 'Loading',\n\n      // The animation to use\n      animation: 'fade-in',\n\n      // Will a dark overlay or backdrop cover the entire view\n      showBackdrop: true,\n\n      // The maximum width of the loading indicator\n      // Text will be wrapped if longer than maxWidth\n      maxWidth: 200,\n\n      // The delay in showing the indicator\n      showDelay: 500\n    });\n  };\n\n  // Hide the loading indicator\n  $scope.hide = function(){\n    $scope.loading.hide();\n  };\n}]);\n*/",
+			"file": "www/js/controllers.js",
+			"file_size": 1128,
+			"file_write_time": 1394521714000000,
+			"settings":
+			{
+				"buffer_size": 1167,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/services.js",
+			"settings":
+			{
+				"buffer_size": 510,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -41,18 +108,29 @@
 	"file_history":
 	[
 		"/Users/henry/.zshrc",
+		"/Users/henry/dev/out/www/js/controllers.js",
+		"/Users/henry/dev/out/www/css/app.css",
+		"/Users/henry/dev/out/www/templates/TFW.html",
+		"/Users/henry/dev/out/plugins/android.json",
+		"/Users/henry/dev/out/.cordova/config.json",
+		"/Users/henry/dev/out/platforms/android/.project",
+		"/Users/henry/dev/out/README.md",
+		"/Users/henry/dev/out/platforms/ios/cordova/console.log",
+		"/Users/henry/dev/out/config.xml",
+		"/Users/henry/dev/out/www/config.xml",
 		"/Users/henry/.ssh/config",
 		"/Users/henry/Dropbox/dev/bandyapp/index.html"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -60,6 +138,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"starter"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -77,8 +156,182 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "www/index.html",
+					"settings":
+					{
+						"buffer_size": 832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								440,
+								440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/templates/fiveDayForecast.html",
+					"settings":
+					{
+						"buffer_size": 626,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								263,
+								263
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/config.xml",
+					"settings":
+					{
+						"buffer_size": 649,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								85,
+								85
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "www/js/app.js",
+					"settings":
+					{
+						"buffer_size": 509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								272,
+								272
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "www/js/controllers.js",
+					"settings":
+					{
+						"buffer_size": 1167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/js/services.js",
+					"settings":
+					{
+						"buffer_size": 510,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								371
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -99,11 +352,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.532869234919,
 			1.0
 		],
 		"rows":
@@ -116,6 +376,10 @@
 	"output.git":
 	{
 		"height": 100.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 149.0
 	},
 	"replace":
 	{
@@ -142,6 +406,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 214.0,
 	"status_bar_visible": true
 }

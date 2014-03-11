@@ -12,19 +12,7 @@ angular.module('out', ['ionic', 'out.services', 'out.controllers'])
       controller: 'FiveDayForecastCtrl'
     });
 
-
   // fallback
   $urlRouterProvider.otherwise('/');
-
-/*
-
-// SEE controller to-do
-
-    .state('loading', {
-      url: "/loading",
-      templateUrl: "index.html",
-      controller: 'LoadingCtrl'
-    })
-*/
 
 });

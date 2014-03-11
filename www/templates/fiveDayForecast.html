@@ -1,23 +1,17 @@
 <ion-view title="'Heading Out?'">
-	<ion-content has-header="false" has-tabs="false">
 
-		<div class="card" ng-repeat="dayData in forecast">
-			<!-- 
-			  TODO: Accomodate weather conditions, 
-			  	eg. ".rainy" if dayData.weather[0].main contains the string "Rain"
-			-->
-			<div class="item item-text-wrap temperature {{outWeatherType()}}">
-				{{dayData.temp.day | number:0}}&deg;
-			</div>
+		<ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
+			<ion-slide ng-repeat="dayData in forecast">
+				<h1 class="temperature">
+				 	{{dayData.temp.day | number:0}}
+				</h1>
+				<div class="day">
+					{{(dayData.dt*1000) | date:'EEEE'}}
+				</div>
+			</ion-slide>
+		</ion-slide-box>
 
-			<div class="item item-divider today">
-				<!-- dt = Unix time of temperature forecast, multiplied by 1000 for milsec -->
-				{{(dayData.dt*1000) | date:'EEEE'}}
-			</div>
-
-		</div>
-
-		<script></script>
-
-	</ion-content>
+	<div class="bar bar-footer bar-dark">
+	  <div class="title">Madison, WI</div>
+	</div>
 </ion-view>

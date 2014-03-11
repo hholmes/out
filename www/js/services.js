@@ -5,6 +5,11 @@ angular.module('out.services', [])
  */
 .factory('FiveDayForecastService', function($q, $http) {
 
+  //TODO: Accomodate weather conditions, 
+  //  eg. ".rainy" if dayData.weather[0].main contains the string "Rain"
+
+  //TODO: Variable location: device geolocation or user input
+
   var getForecast = function() {
     var deferred = $q.defer();
 
@@ -21,3 +26,6 @@ angular.module('out.services', [])
       getForecast: getForecast
     };
 });
+
+
+// TODO: Replace text for "Today" and "Tomorrow" based on date comparison

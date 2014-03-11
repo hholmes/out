@@ -1,8 +1,25 @@
-/* Your app's CSS, go crazy, make it your own */
+/* author:
+	Henry Holmes 
+*/
 
-.ionic-logo {
-  display: block;
-  margin: 15px auto;
-  width: 96px;
-  height: 96px;
+body {
+	background: #efefef;
+}
+
+.temperature {
+  font-size: 5em;
+  padding: 40px;
+}
+
+.card .item.today {
+	color: #fff;
+	background: #444 !important;
+}
+
+.temperature.sunny {
+  background: lightyellow;
+}
+
+.temperature.rainy {
+  background: lightblue;
 }

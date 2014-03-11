@@ -1,6 +1,4 @@
-ionic-angular-cordova-seed
+Out
 ==========================
 
-The perfect starting point for an Ionic project.
-
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+Know your weather.

@@ -1,15 +1,43 @@
-angular.module('starter.controllers', [])
+angular.module('dailyView.controllers', [])
 
+.controller('DailyViewCtrl', function($scope, DailyWeatherService) {;
+	console.log("Assigning temperatures to temps local scope variable.");
 
-// A simple controller that fetches a list of data from a service
-.controller('PetIndexCtrl', function($scope, PetService) {
-  // "Pets" is a service returning mock data (services.js)
-  $scope.pets = PetService.all();
+	
+
+	$scope.temps = DailyWeatherService.all();
 })
 
+/*
+.controller('LoadingCtrl', ['$scope', '$ionicLoading', function($scope, $ionicLoading) {
 
-// A simple controller that shows a tapped item's data
-.controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
-  // "Pets" is a service returning mock data (services.js)
-  $scope.pet = PetService.get($stateParams.petId);
-});
+  // Trigger the loading indicator
+  $scope.show = function() {
+
+    // Show the loading overlay and text
+    $scope.loading = $ionicLoading.show({
+
+      // The text to display in the loading indicator
+      content: 'Loading',
+
+      // The animation to use
+      animation: 'fade-in',
+
+      // Will a dark overlay or backdrop cover the entire view
+      showBackdrop: true,
+
+      // The maximum width of the loading indicator
+      // Text will be wrapped if longer than maxWidth
+      maxWidth: 200,
+
+      // The delay in showing the indicator
+      showDelay: 500
+    });
+  };
+
+  // Hide the loading indicator
+  $scope.hide = function(){
+    $scope.loading.hide();
+  };
+}]);
+*/

@@ -1,26 +1,37 @@
-angular.module('starter.services', [])
+angular.module('dailyView.services', [])
 
 /**
- * A simple example service that returns some data.
+ * ...by any other name,
  */
-.factory('PetService', function() {
-  // Might use a resource here that returns a JSON array
+.factory('DailyWeatherService', function($http) {
+  // TODO: query Open Weather API
 
-  // Some fake testing data
-  var pets = [
-    { id: 0, title: 'Cats', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
-    { id: 1, title: 'Dogs', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
-    { id: 2, title: 'Turtles', description: 'Everyone likes turtles.' },
-    { id: 3, title: 'Sharks', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' }
-  ];
+  $http.get(
+      'http://api.openweathermap.org/data/2.5/weather?q=Madison,wi'
+    ).success(
+      function(data, status, headers, config) {
+        console.log(data);
+      }
+    );
+
+
+  console.log("daily Weather Service is running.");
+
+  // temporary daily weather forecast data
+  var temps = [
+      { id:0, day: 'Today', degreesF: '47' },
+      { id:1, day: 'Tomorrow', degreesF: '51' },
+      { id:2, day: 'Wednesday', degreesF: '57' },
+      { id:2, day: 'Thursday', degreesF: '61' }
+    ];
 
   return {
     all: function() {
-      return pets;
+      console.log("Returning all temps from DailyWeatherService.");
+      return temps;
     },
-    get: function(petId) {
-      // Simple index lookup
-      return pets[petId];
+    inNumDays: function(dayOffset) {
+      return temps[dayOffset];
     }
   }
 });

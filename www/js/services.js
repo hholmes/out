@@ -1,37 +1,36 @@
-angular.module('dailyView.services', [])
+angular.module('out.services', [])
 
 /**
  * ...by any other name,
  */
-.factory('DailyWeatherService', function($http) {
-  // TODO: query Open Weather API
+.factory('FiveDayForecastService', function($q, $http) {
 
-  $http.get(
-      'http://api.openweathermap.org/data/2.5/weather?q=Madison,wi'
-    ).success(
-      function(data, status, headers, config) {
-        console.log(data);
-      }
-    );
+  var getForecast = function() {
+    var deferred = $q.defer();
 
+    $http.get(
+      'http://api.openweathermap.org/data/2.5/forecast/daily?q=Madison,wi&mode=json&units=imperial&cnt=5'
+    ).then(function(data) {
+      deferred.resolve(data);
+    });
+  
+      return deferred.promise;
+    };
+    
+    return {
+      getForecast: getForecast
+    };
 
-  console.log("daily Weather Service is running.");
-
-  // temporary daily weather forecast data
-  var temps = [
-      { id:0, day: 'Today', degreesF: '47' },
-      { id:1, day: 'Tomorrow', degreesF: '51' },
-      { id:2, day: 'Wednesday', degreesF: '57' },
-      { id:2, day: 'Thursday', degreesF: '61' }
-    ];
-
-  return {
-    all: function() {
-      console.log("Returning all temps from DailyWeatherService.");
-      return temps;
-    },
-    inNumDays: function(dayOffset) {
-      return temps[dayOffset];
-    }
-  }
+  // return {
+  //   promise: promise,
+  //   setForecast: function (data) {
+  //     forecast = data;
+  //   },
+  //   all: function() {
+  //     return forecast.list;
+  //   },
+  //   dayAtIndex: function(i) {
+  //     return forecast.list[i];
+  //   }
+  // }
 });

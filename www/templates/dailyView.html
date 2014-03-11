@@ -1,18 +1,18 @@
-<ion-view title="'Daily Forecast'">
+<ion-view title="'Heading Out?'">
 	<ion-content has-header="false" has-tabs="false">
-      
-		<div class="card" ng-repeat="temperature in temps">
+
+		<div class="card" ng-repeat="dayData in forecast">
 			<!-- 
 			  TODO: Add class to adjust background depending on weather conditions, eg. ".rainy" 
 			-->
 			<div class="item item-text-wrap temperature">
-			  {{temperature.degreesF}}
-			  &deg;
+				{{dayData.temp.day}}
+				&deg;
 			</div>
 
-			<div class="item item-divider today">
-			  {{temperature.day}}
-			</div>
+			<!-- <div class="item item-divider today">
+			  Day N
+			</div> -->
 
 		</div>
 

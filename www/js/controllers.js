@@ -1,11 +1,11 @@
-angular.module('dailyView.controllers', [])
+angular.module('out.controllers', [])
 
-.controller('DailyViewCtrl', function($scope, DailyWeatherService) {;
-	console.log("Assigning temperatures to temps local scope variable.");
+.controller('DailyViewCtrl', function($scope, FiveDayForecastService) {;
 
-	
-
-	$scope.temps = DailyWeatherService.all();
+	// Weather Service is assured resolved by this call. (Note route resolve)
+	FiveDayForecastService.getForecast().then(function(data){
+    $scope.forecast = data.data.list;
+  })
 })
 
 /*
